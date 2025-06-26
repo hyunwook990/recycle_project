@@ -109,19 +109,19 @@ class ResNet50(nn.Module):
 
 
     def forward(self, x):
-        x = self.conv1(x)
+        x = self.conv1(x)           # 64
         shortcut = x
         for _ in range(3):
-            x = self.conv2_x(x)
+            x = self.conv2_x(x)     # 256
         x = self.conv3_x_down(x)
         for _ in range(3):
-            x = self.conv3_x(x)
+            x = self.conv3_x(x)     # 512
         x = self.conv4_x_down(x)
         for _ in range(5):
-            x = self.conv4_x(x)
+            x = self.conv4_x(x)     # 1024
         x = self.conv5_x_down(x)
         for _ in range(2):
-            x = self.conv5_x(x)
+            x = self.conv5_x(x)     # 2048
         return self.linear(x)
     
 # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
