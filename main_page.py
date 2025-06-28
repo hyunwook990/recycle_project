@@ -66,11 +66,7 @@ class MyApp(QMainWindow):
         pass
 
     def modify(self):
-        # if __name__ == "mod_result":
-        #     app = QApplication(sys.argv)
-        #     ex = MyApp()
-        #     sys.exit(app.exec_())
-        pass
+        import mod_result
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
